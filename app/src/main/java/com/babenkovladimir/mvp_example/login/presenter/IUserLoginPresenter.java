@@ -1,6 +1,11 @@
 package com.babenkovladimir.mvp_example.login.presenter;
 
+import androidx.lifecycle.LiveData;
+
+import com.babenkovladimir.mvp_example.data.entity.User;
 import com.babenkovladimir.mvp_example.login.view.IUserLoginView;
+
+import java.util.List;
 
 public interface IUserLoginPresenter {
 
@@ -11,6 +16,8 @@ public interface IUserLoginPresenter {
     void changeLogin(String login);
 
     void onLoginButtonClick();
+
+
 
 
 }

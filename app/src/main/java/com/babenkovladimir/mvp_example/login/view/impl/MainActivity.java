@@ -1,19 +1,22 @@
 package com.babenkovladimir.mvp_example.login.view.impl;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.babenkovladimir.mvp_example.R;
+import com.babenkovladimir.mvp_example.data.entity.User;
 import com.babenkovladimir.mvp_example.login.presenter.IUserLoginPresenter;
 import com.babenkovladimir.mvp_example.login.presenter.impl.UserLoginPresenterImpl;
 import com.babenkovladimir.mvp_example.login.view.IUserLoginView;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -81,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements IUserLoginView {
             }
         });
 
-        mLoginBt.setOnClickListener(new View.OnClickListener(){
+        mLoginBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mPresenter.onLoginButtonClick();
@@ -96,8 +99,13 @@ public class MainActivity extends AppCompatActivity implements IUserLoginView {
 
     @Override
     public void navigateMainScreen() {
-       // startActivity(new Intent(this, MainScreenActivity.class));
+        // startActivity(new Intent(this, MainScreenActivity.class));
 
+    }
+
+    @Override
+    public void showUsers(List<User> users) {
+        Log.d("TAG", "showUsers: " + users);
     }
 
     @Override
