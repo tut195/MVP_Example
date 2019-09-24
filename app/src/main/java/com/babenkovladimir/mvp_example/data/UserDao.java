@@ -20,7 +20,7 @@ public interface UserDao {
     public void insertUser(User user);
 
     @Insert
-    public Single<List<Long>> insertUserS(List<User> users);
+    public void insertUserS(List<User> users);
 
     @Query("SELECT * FROM user")
     public List<User> getUsers();
