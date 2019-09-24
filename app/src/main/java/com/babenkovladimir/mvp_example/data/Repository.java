@@ -18,7 +18,7 @@ public class Repository implements IRepository {
 
     @Override
     public Completable inserUser(User user) {
-        return Completable.fromAction(() -> { userDao.insertUser(user)});
+        return Completable.fromAction(() -> { userDao.insertUser(user);});
     }
 
     @Override
